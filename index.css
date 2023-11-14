@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+header h1{
+    margin-bottom: 3rem;
+}
+main{
+    border : 1px solid black;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.left{
+    background-image: url("rocket.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.right{
+    padding: 2rem 2rem;
+    width: 90%;
+}
+label{
+    font-size: 1em;
+    font-weight: bold;
+}
+input[type = "text"], input[type = "password"], input[type = "email"]
+{
+    margin: 1rem 0;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 80%;
+    outline: none;
+    font-size: .9em;
+}
+
+input[type = "text"]:focus, input[type = "password"]:focus, input[type = "email"]:focus{
+    border-bottom: 2px solid black;
+}
+
+.form-field-group{
+    margin: 2rem 0;
+}
+input[type = "submit"]{
+    width: 50%;
+    padding: .6rem;
+    border-radius: .5rem;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #0190CC;
+    border: none;
+    color: white;
+
+}
+input[type = "submit"]:focus, input[type = "submit"]:hover{
+  background-color: #00ACDC
+}
+.form-blue-text{
+    color: #0190CC;
+    text-transform: uppercase;
+}
+
+
+.error-text{
+    color: red;
+}
+
+@media screen and (max-width : 600px) {
+    .left{
+        display: none;
+    }
+    main{
+        grid-template-columns: repeat(auto-fit, 1fr);
+    }
+    input[type = "text"], input[type = "password"], input[type = "email"]
+{
+    width: 100%;
+}
+}

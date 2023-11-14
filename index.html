@@ -8,9 +8,48 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <form id="registerForm">
-        <label>registerForm</label>
-    </form>
+    <main>
+            <div class="left"></div>
+            <div class="right">
+                <header>
+                    <h1>Registration <span class="form-blue-text">form</span></h1>
+                </header>
+                <form id="registerForm">
+                    <div class="form-field-group">
+                        <label for="first-name">First Name</label>
+                        <div>
+                            <input id="first-name" name="name" type="text" value="" placeholder="First name" required>    
+                            <div class="error error-text"></div>
+                        </div>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="last-name">Last Name</label>
+                        <div>
+                            <input id="last-name" name="last-name" type="text" value="" placeholder="Last name" required>  
+                            <div class="error error-text"></div>  
+                        </div>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="password">Password</label>
+                        <div>
+                            <input id="password" name="password" type="password" value="" placeholder="*******" required>
+                            <div class="error error-text"></div>    
+                        </div>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="email">Email</label>
+                        <div>
+                            <input id="email" name="email" type="email" value="" placeholder="example@something.com" required> 
+                            <div class="error error-text"></div>   
+                        </div>
+                    </div>
+                    <div  class="form-field-group">
+                        <input type="submit" value="submit" >
+
+                    </div>
+                </form>
+            </div>
+    </main>
     
 </body>
 </html>
