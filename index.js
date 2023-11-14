@@ -59,6 +59,15 @@ const formProcessing = (formSelector) => {
 
    }
 
+   //validate form on blur event
+
+   Array.from(formElement.elements).forEach((element) =>{
+    element.addEventListener("blur", event => {
+        validateSingleFormGroup(event.srcElement.parentElement.parentElement)
+    })
+   } );
+
+   //validate form on submit click
    document.addEventListener("submit", (event) => {
     event.preventDefault();
     validateFormGroup();
