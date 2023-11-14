@@ -6,6 +6,7 @@
     <title>Javascript form submit with validation</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/93c7a20221.js"  crossorigin="anonymous" defer></script>
 </head>
 <body>
     <main>
@@ -17,29 +18,37 @@
                 <form id="registerForm">
                     <div class="form-field-group">
                         <label for="first-name">First Name</label>
-                        <div>
-                            <input id="first-name" name="name" type="text" value="" placeholder="First name" required>    
+                        <div class="input-container">
+                            <input id="first-name" name="name" type="text" value="" placeholder="First name" required>
+                            <span class="fa fa-exclamation-triangle warning-icon hide" aria-hidden="true"></span>   
+                            <i class="fa-solid fa-circle-check valid-icon hide"></i>
                             <div class="error error-text"></div>
                         </div>
                     </div>
                     <div class="form-field-group">
                         <label for="last-name">Last Name</label>
-                        <div>
-                            <input id="last-name" name="last-name" type="text" value="" placeholder="Last name" required>  
+                        <div class="input-container">
+                            <input id="last-name" name="last-name" type="text" value="" placeholder="Last name" required>
+                            <span class="fa fa-exclamation-triangle warning-icon hide" aria-hidden="true"></span>   
+                            <i class="fa-solid fa-circle-check valid-icon hide"></i>  
                             <div class="error error-text"></div>  
                         </div>
                     </div>
                     <div class="form-field-group">
                         <label for="password">Password</label>
-                        <div>
+                        <div class="input-container">
                             <input id="password" name="password" type="password" value="" placeholder="*******" required>
+                            <span class="fa fa-exclamation-triangle warning-icon hide" aria-hidden="true"></span>   
+                            <i class="fa-solid fa-circle-check valid-icon hide"></i>
                             <div class="error error-text"></div>    
                         </div>
                     </div>
                     <div class="form-field-group">
                         <label for="email">Email</label>
-                        <div>
-                            <input id="email" name="email" type="email" value="" placeholder="example@something.com" required> 
+                        <div class="input-container">
+                            <input id="email" name="email" type="email" pattern="^(.+)@(.+)$" value="" placeholder="example@something.com" required>
+                            <span class="fa fa-exclamation-triangle warning-icon hide" aria-hidden="true"></span>   
+                            <i class="fa-solid fa-circle-check valid-icon hide"></i> 
                             <div class="error error-text"></div>   
                         </div>
                     </div>

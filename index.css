@@ -11,7 +11,6 @@ header h1{
     margin-bottom: 3rem;
 }
 main{
-    border : 1px solid black;
     width: 100%;
     height: 100%;
     display: grid;
@@ -66,10 +65,42 @@ input[type = "submit"]:focus, input[type = "submit"]:hover{
     text-transform: uppercase;
 }
 
-
 .error-text{
     color: red;
+    font-size: .9em;
 }
+
+.input-container{
+    position: relative;
+}
+.warning-icon{
+    position: absolute;
+    top: 1em;
+    left: 77%;
+    color: red;
+}
+.valid-icon{
+    position: absolute;
+    top: 1em;
+    left: 77%;
+    color: green;
+}
+.show{
+    display: inline !important;
+}
+.hide{
+    display: none !important;
+}
+
+.red-border{
+    border-bottom: 2px solid red !important;
+}
+
+.green-border{
+    border-bottom: 2px solid green !important;
+}
+
+
 
 @media screen and (max-width : 600px) {
     .left{
@@ -81,5 +112,11 @@ input[type = "submit"]:focus, input[type = "submit"]:hover{
     input[type = "text"], input[type = "password"], input[type = "email"]
 {
     width: 100%;
+}
+.warning-icon{
+    left: 96%;
+}
+.valid-icon{ 
+    left: 96%;
 }
 }
