@@ -41,36 +41,53 @@ const formProcessing = (formSelector) => {
 
     }
     if(!formError){
-        error.textContent = null;
+        error ? error.textContent = null : "";
         input.classList.remove("red-border");
         input.classList.add("green-border");
-        errorIcon.classList.add("hide");
-        errorIcon.classList.remove("show");
-        validIcon.classList.add("show");
-        validIcon.classList.remove("hide");
+        errorIcon ? errorIcon.classList.add("hide") : "";
+        errorIcon ? errorIcon.classList.remove("show") : "";
+        validIcon ? validIcon.classList.add("show"): "";
+        validIcon ? validIcon.classList.remove("hide") : "";
     }
+
+    return !formError;
 
    }
 
    const validateFormGroup = () => {
 
     const formGroups = Array.from(formElement.querySelectorAll(".form-field-group"))
-    formGroups.forEach(formGroup => { validateSingleFormGroup(formGroup)})
+    const validForm = formGroups.every(formGroup => { return validateSingleFormGroup(formGroup)})
+    return validForm
 
    }
 
    //validate form on blur event
-
    Array.from(formElement.elements).forEach((element) =>{
     element.addEventListener("blur", event => {
         validateSingleFormGroup(event.srcElement.parentElement.parentElement)
     })
    } );
 
+  //captures all form data 
+   const getFormData = () => {
+       const formInputFields = Array.from(formElement.elements)
+       const formData = formInputFields.filter(item => item.type !== 'submit').reduce((acc, item) => ({...acc, [item.id] : item.value }));
+       console.log(formData);
+   }
+
    //validate form on submit click
    document.addEventListener("submit", (event) => {
-    event.preventDefault();
-    validateFormGroup();
+   event.preventDefault();
+   const validForm =  validateFormGroup();
+
+    if(validForm){
+        console.log("form is valid")
+        getFormData();
+    }
+    else{
+       
+    }
    })
 
 } 
